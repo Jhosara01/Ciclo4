@@ -1,0 +1,125 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns:th="https://thymeleaf.org";>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EDITAR EMPRESA</title>
+  <link th:href="@{../css/estilos_index.css}" rel="stylesheet" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link th:href="@{../Img/fotodeperfilefi-35.ico}" rel="icon">
+
+  <style>
+  .boton  {
+  background-color: #2c3e73;
+  color: white;
+  padding: 15px 25px;
+  text-decoration: none;
+  font-family: sans-serif;
+}
+
+boton:hover,
+.boton a:active {
+background-color: #2c3e73;
+text-decoration: none;
+color:white;
+
+}
+
+h1 {
+  font-family: sans-serif;
+  font-size: 20px;
+  color: #f2da65;
+  }
+h3 {
+ text-align: left;
+ font-family: sans-serif;
+  font-size:30px;
+  color: #2c3e73;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+  <br /><br /><br /><br />
+  <div align="center">
+    <img src="../Img/logoazul-35.png" style="max-width:40%;height:auto;">
+  </div>
+
+  <br />
+  <h1 align="center"> _____ Soluciones Energéticas _____</h1>
+
+</header>
+<br /><br />
+
+<div class="container">
+  <!--p th:inline="text" class="text-right">User: [[${#httpServletRequest.remoteUser}]]</p>
+  <button type="button" class="btn btn-danger" style="float:right"><a th:href="@{/logout}">Cerrar Sesión</a></button-->
+
+
+  <h3> Edite aqui los datos de Empresa</h3>
+  <br>
+  <!--Crear formulario para llenar los datos de la empresa y guardarlo en el objeto emp -->
+  <form th:action="@{/ActualizarEmpresa}" th:object="${emp}" method="post">
+
+    <!--Campo para ID-->
+    <div class="form-group row">
+      <label for="id" class="col-sm-2 col-form-label">ID de la Empresa</label>
+      <div class="col-md-6">
+        <input type="text" class="form-control" id="id"  required="required" readonly>
+      </div>
+    </div>
+
+    <!--Campo para nombre-->
+    <div class="form-group row">
+      <label for="nombre" class="col-sm-2 col-form-label">Nombre de la Empresa</label>
+      <div class="col-md-6">
+        <input type="text" class="form-control" id="nombre"  required="required">
+      </div>
+    </div>
+
+    <!--Campo para direccion-->
+    <div class="form-group row">
+      <label for="direccion" class="col-sm-2 col-form-label">Dirección de la Empresa</label>
+      <div class="col-md-6">
+        <input type="text" class="form-control" id="direccion" required="required">
+      </div>
+    </div>
+
+    <!--Campo para telefono-->
+    <div class="form-group row">
+      <label for="telefono" class="col-sm-2 col-form-label">Telefono de la Empresa</label>
+      <div class="col-md-6">
+        <input type="text" class="form-control" id="telefono" required="required">
+      </div>
+    </div>
+
+    <!--Campo para NIT-->
+    <div class="form-group row">
+      <label for="NIT" class="col-sm-2 col-form-label">NIT o RUT de la Empresa</label>
+      <div class="col-md-6">
+        <input type="text" class="form-control" id="NIT" required="required">
+      </div>
+    </div>
+
+    <!--Boton para enviar todo y ejecutar accion -->
+    <div class="row">
+      <div class="col-md-6">
+        <button class="boton">Actualizar Empresa</button>
+
+      </div>
+    </div>
+
+  </form>
+
+  <br>
+  <a href="javascript: history.go(-1)" class="boton" role="button">Atrás</a>
+  <br><br>
+
+</div>
+</body>
+</html>

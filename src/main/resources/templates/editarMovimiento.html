@@ -1,0 +1,125 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns:th="https://thymeleaf.org";>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EDITAR MOVIMIENTO DE DINERO</title>
+  <link th:href="@{../css/estilos_index.css}" rel="stylesheet" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link th:href="@{../Img/fotodeperfilefi-35.ico}" rel="icon">
+
+  <style>
+  .boton  {
+  background-color: #2c3e73;
+  color: white;
+  padding: 15px 25px;
+  text-decoration: none;
+  font-family: sans-serif;
+}
+
+boton:hover,
+.boton a:active {
+background-color: #2c3e73;
+text-decoration: none;
+color:white;
+
+}
+
+.boton_1  {
+  background-color: #2c3e73;
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+  font-family: sans-serif;
+}
+
+boton_1:hover,
+.boton a:active {
+background-color: #2c3e73;
+text-decoration: none;
+color:white;
+
+}
+
+h1 {
+  font-family: sans-serif;
+  font-size: 20px;
+  color: #f2da65;
+  }
+h3 {
+ text-align: left;
+ font-family: sans-serif;
+  font-size:30px;
+  color: #2c3e73;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+  <br /><br /><br /><br />
+  <div align="center">
+    <img src="../Img/logoazul-35.png" style="max-width:40%;height:auto;">
+  </div>
+
+  <br />
+  <h1 align="center"> _____ Soluciones Energéticas _____</h1>
+
+</header>
+<br /><br />
+
+<div class="container">
+  <!--p th:inline="text" class="text-right">User: [[${#httpServletRequest.remoteUser}]]</p>
+  <button type="button" class="btn btn-danger" style="float:right"><a th:href="@{/logout}">Cerrar Sesión</a></button-->
+
+
+  <h3> Edite aqui los datos del Movimiento</h3>
+  <br>
+  <!--Crear formulario para llenar los datos de la empresa y guardarlo en el objeto mov -->
+  <form th:action="@{/ActualizarMovimiento}" th:object="${mov}" method="post">
+
+    <!--Campo para Concepto-->
+    <div class="form-group row">
+      <label for="concepto" class="col-sm-2 col-form-label">Concepto del Movimiento</label>
+      <div class="col-md-6">
+        <input type="text" class="form-control" id="concepto"  required="required">
+      </div>
+    </div>
+
+    <!--Campo para monto-->
+    <div class="form-group row">
+      <label for="monto" class="col-sm-2 col-form-label">Valor del Movimiento</label>
+      <div class="col-md-6">
+        <input type="number" class="form-control" id="monto" required="required">
+      </div>
+    </div>
+
+    <!--Campo para empleado o usuario-->
+    <div class="form-group row">
+      <label for="usuario" class="col-sm-2 col-form-label">Usuario Responsable</label>
+      <div class="col-md-6">
+        <input type="text" class="form-control" id="usuario" required="required">
+      </div>
+    </div>
+
+    <!--Boton para enviar todo y ejecutar accion -->
+    <div class="row">
+      <div class="col-md-2">
+        <button class="boton_1">Actualizar empleado</button>
+      </div>
+    </div>
+
+  </form>
+
+  <br>
+  <a href="javascript: history.go(-1)" class="boton_1" role="button">Atrás</a>
+
+  <br><br>
+
+</div>
+</body>
+</html>
